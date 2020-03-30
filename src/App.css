@@ -27,8 +27,16 @@
 .field-row.add-btn{padding-top:20px}
 .field-col{float:left;width:100%;padding:5px 10px}
 .field-col.two_col{float:left;width:47%;}
+button{font-size: 24px;}
 input[type=text]{width:92.3%;float:left}
 .field-col.two_col input[type=text]{width:90%}
+.user-check-note{text-align:left}
+.user-check-note p{padding: 0px 10px;color:red;font-weight: bold;margin: 0 auto;}
+.user-lists{float:left;width:100%;padding:40px 15px 30px}
+.user-lists p.items{width:100%;max-width:95%;margin:0 auto; display: block;background: #eee;font-size: 19px;font-weight: bold;padding: 13px 0px;}
+.user-lists li{padding: 10px 0px;}
+.user-lists button{font-size: 18px;}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
