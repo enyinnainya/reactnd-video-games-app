@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.content-holder{display:block;width:100%;max-width:700px;margin:0 auto;padding:0px 15px}
+.field-row{float:left;width:100%;padding:5px 0px}
+.field-row.add-btn{padding-top:20px}
+.field-col{float:left;width:100%;padding:5px 10px}
+.field-col.two_col{float:left;width:47%;}
+input[type=text]{width:92.3%;float:left}
+.field-col.two_col input[type=text]{width:90%}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
