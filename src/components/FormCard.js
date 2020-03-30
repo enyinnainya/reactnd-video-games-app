@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import FormInputCard from './FormInputCard';
-import DeleteItemCard from './DeleteItemCard';
 import ItemDisplayCard from './ItemDisplayCard';
 import PropTypes from 'prop-types';
 
@@ -13,7 +12,7 @@ class FormCard extends Component{
 
 	static  propTypes={
         state: PropTypes.object.isRequired,
-        addItem: PropTypes.func.isRequired,
+        addUser: PropTypes.func.isRequired,
         deleteLastItem: PropTypes.func.isRequired,
         noItemsFound: PropTypes.func.isRequired
     }
@@ -30,14 +29,14 @@ class FormCard extends Component{
   };
 
   render(){
-    const {noItemsFound,deleteLastItem,state,addItem}=this.props;
+    const {noItemsFound,deleteLastItem,addUser}=this.props;
+    const {user_check_note,users}=this.props.state;
    return (
    		<div className="content-holder">
      
-     		<h2>Users List</h2>
-        	<FormInputCard state={this.state} inputIsEmpty={this.inputIsEmpty} handleChange={this.handleChange} addItem={addItem}   />
-        	<DeleteItemCard deleteLastItem={deleteLastItem} noItemsFound={noItemsFound} />
-        	<ItemDisplayCard state={state}/>
+     		<h2>Video Game Users</h2>
+        	<FormInputCard state={this.state} user_check_note={user_check_note} inputIsEmpty={this.inputIsEmpty} handleChange={this.handleChange} addUser={addUser}   />
+        	<ItemDisplayCard users={users} />
 		</div>
    ); 
     

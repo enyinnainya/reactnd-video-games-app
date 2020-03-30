@@ -4,17 +4,20 @@ import PropTypes from 'prop-types';
 class FormInputCard extends Component{
   
   	static  propTypes={
-        addItem: PropTypes.func.isRequired,
+        addUser: PropTypes.func.isRequired,
         inputIsEmpty: PropTypes.func.isRequired,
         handleChange: PropTypes.func.isRequired
     }
+
+    
   render(){
     
-    const {inputIsEmpty,handleChange,addItem} =this.props;
+    const {inputIsEmpty,user_check_note,handleChange,addUser} =this.props;
     const {first_name,last_name,username} =this.props.state;
     
    	return (
-    	<form onSubmit={(event)=>addItem(event,{first_name:first_name,last_name:last_name,username:username})}>
+
+    	<form onSubmit={(event)=>addUser(event,[first_name,last_name,username])}>
 		<div className="field-row">
           <div className="field-col left-col two_col">
 			<input
@@ -24,7 +27,7 @@ class FormInputCard extends Component{
             onChange={(event)=>handleChange(event.target.value,"first_name")}
           />
           </div>
-          <div className="field-col right-col two_col">
+          <div className="field-col two_col">
 			<input
             type="text"
             placeholder="Enter Last Name"
@@ -34,7 +37,7 @@ class FormInputCard extends Component{
           </div>
 		</div>
 		<div className="field-row">
-  		<div className="field-col right-col ">
+  		<div className="field-col ">
            <input
             type="text"
             placeholder="Enter Username"
@@ -43,8 +46,16 @@ class FormInputCard extends Component{
           />
 		</div>
 		</div>
+      {user_check_note.length>0 && (
+        <div className="field-row user-check-note">
+  		<div className="field-col">
+      <p>{user_check_note}</p>
+      </div>
+    </div>
+      )}
+    
 		<div className="field-row add-btn">
-  		<div className="field-col right-col add-btn">
+  		<div className="field-col ">
           <button disabled={inputIsEmpty()}>Add User</button>
           </div>
 		</div>
